@@ -372,8 +372,8 @@ else()
             COMPONENT devel)
 endif()
 
-install(FILES license.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
-install(FILES readme.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
+#install(FILES license.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
+#install(FILES readme.md DESTINATION ${CMAKE_INSTALL_DOCDIR})
 
 # install 3rd-party libraries and tools
 if(SFML_OS_WINDOWS)

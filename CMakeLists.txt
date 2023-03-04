@@ -50,6 +50,8 @@ set(VERSION_MAJOR 2)
 set(VERSION_MINOR 5)
 set(VERSION_PATCH 1)
 
+option(SFML_INSTALL "Enable installation of SFML. (Projects embedding SFML may want to turn this OFF.)" ON)
+
 # add an option for choosing the build type (shared or static)
 if(NOT (SFML_OS_IOS OR SFML_OS_ANDROID))
     sfml_set_option(BUILD_SHARED_LIBS TRUE BOOL "TRUE to build SFML as shared libraries, FALSE to build it as static libraries")
@@ -526,7 +528,10 @@ elseif(SFML_OS_ANDROID)
 
 endif()
 
-sfml_export_targets()
+
+if (SFML_INSTALL)
+    sfml_export_targets()
+endif ()
 
 set(CPACK_PACKAGE_NAME_SUMMARY "Simple and Fast Multimedia Library")
 set(CPACK_PACKAGE_VENDOR "SFML Team")
